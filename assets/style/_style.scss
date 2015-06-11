@@ -1,11 +1,13 @@
-body, html {
+body,
+html {
 	height: 100%;
 	margin: 0;
 	padding: 0;
 }
 
-article {
-	width: 90%;
+article,
+footer {
+	width: 85%;
 	margin: 0 auto;
 }
 

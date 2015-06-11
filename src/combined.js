@@ -8,7 +8,8 @@ $.fn.imgFixHeight = function(){
 	var imgOriginalHeight = this.height();
 
 	// Get Line-height
-	var lineHeight = parseInt($('p').css("line-height"));
+	var lineHeight = $('p').css("line-height");
+	console.log(lineHeight);
 
 	// Calculate the new image height
 	var div = Math.floor(imgOriginalHeight/lineHeight);

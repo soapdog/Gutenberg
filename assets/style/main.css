@@ -469,14 +469,16 @@ cite {
   display: block;
 }
 
-body, html {
+body,
+html {
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
-article {
-  width: 90%;
+article,
+footer {
+  width: 85%;
   margin: 0 auto;
 }
 
@@ -499,18 +501,12 @@ html {
   color: #3c3c3c;
   font-family: "Merriweather", Georgia, serif;
   font-size: 1rem;
-  /* 16px */
   -moz-font-feature-settings: "salt" 1;
   -moz-font-feature-settings: "salt=1";
   -ms-font-feature-settings: "salt" 1;
   -o-font-feature-settings: "salt" 1;
   -webkit-font-feature-settings: "salt" 1;
   font-feature-settings: "salt" 1;
-}
-
-* {
-  line-height: 1.44rem;
-  /* 23px */
 }
 
 a {
@@ -544,8 +540,9 @@ blockquote,
 figure,
 pre,
 img {
+  line-height: 1.728rem;
   margin-top: 0;
-  margin-bottom: 1.44rem;
+  margin-bottom: 1.728rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -554,28 +551,37 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 2.48832rem;
-  line-height: 2.88rem;
-  margin-top: 4.32rem;
-  margin-bottom: 1.44rem;
+  font-size: 2rem;
+  line-height: 3.456rem;
+  margin-top: 5.184rem;
+  margin-bottom: 1.728rem;
   letter-spacing: -0.0625rem;
 }
 
 h2 {
   font-size: 1.728rem;
-  margin-top: 2.16rem;
-  margin-bottom: 0.72rem;
+  margin-top: 2.592rem;
+  margin-bottom: 0.864rem;
 }
 
 h3 {
   font-size: 1.44rem;
-  margin-top: 2.16rem;
-  margin-bottom: 0.72rem;
+  margin-top: 2.592rem;
+  margin-bottom: 0.864rem;
 }
 
 h4 {
-  margin-top: 2.16rem;
-  margin-bottom: 0.72rem;
+  margin-top: 2.592rem;
+  margin-bottom: 0.864rem;
+}
+
+h5 {
+  font-weight: normal;
+  font-style: italic;
+}
+
+h6 {
+  font-weight: normal;
 }
 
 h2 + h3 {
@@ -604,16 +610,16 @@ ul li, ol li {
 blockquote {
   margin-left: auto;
   margin-right: auto;
-  margin-top: -0.72rem;
-  margin-bottom: 1.44rem;
+  margin-top: -0.864rem;
+  margin-bottom: 1.728rem;
 }
 blockquote p {
-  margin-bottom: 0.72rem;
-  padding-left: 1.44rem;
+  margin-bottom: 0.864rem;
+  padding-left: 1.728rem;
   font-size: 0.9rem;
 }
 blockquote p + footer cite {
-  padding-left: 1.44rem;
+  padding-left: 1.728rem;
   vertical-align: middle;
   font-size: 0.9rem;
 }
@@ -624,7 +630,7 @@ figure + h3, figure + h4 {
 }
 
 img {
-  vertical-align: middle;
+  display: block;
 }
 
 small {
@@ -634,13 +640,34 @@ small {
   line-height: 1.4375rem;
 }
 
+figure {
+  padding: 0;
+  margin: 3.456rem auto;
+  max-width: 36rem;
+  text-align: center;
+}
+figure img {
+  max-width: 100%;
+}
+figure figcaption {
+  font-size: 0.86806rem;
+  color: #888;
+  margin-bottom: 1.728rem;
+}
+
+figure.floatLeft, figure.floatRight {
+  padding: 1.728rem;
+  max-width: 15rem;
+  margin: 0;
+}
+figure.floatLeft figcaption, figure.floatRight figcaption {
+  max-width: 100%;
+  font-size: 0.86806rem;
+}
+
 @media screen and (min-width: 1025px) {
   html {
-    font-size: 1rem, 1.25rem 1.25rem;
-  }
-
-  * {
-    line-height: 1.8rem;
+    font-size: 1.25rem;
   }
 
   h1,
@@ -657,35 +684,36 @@ small {
   pre,
   img {
     max-width: 36rem;
+    line-height: 1.5rem;
+    margin-bottom: 1.5rem;
     margin-top: 0;
-    margin-bottom: 1.8rem;
     margin-left: auto;
     margin-right: auto;
   }
 
   h1 {
-    font-size: 1.44rem;
-    line-height: 3.6rem;
-    margin-top: 5.4rem;
-    margin-bottom: 1.8rem;
+    font-size: 2.592rem;
+    line-height: 3rem;
+    margin-top: 4.5rem;
+    margin-bottom: 1.5rem;
   }
 
-  h2, h3, h4, h5, h6 {
-    line-height: 1.8rem;
-    margin-top: 3.15rem;
-    margin-bottom: 0.45rem;
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.5rem;
+    margin-top: 2.25rem;
+    margin-bottom: 0.75rem;
   }
 
   h2 {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
   }
 
   h3 {
-    font-size: 1.04167rem;
-  }
-
-  h4 {
-    font-size: 1rem, 1.25rem;
+    font-size: 1.5rem;
   }
 
   h5 {
@@ -700,76 +728,71 @@ small {
   }
 
   h2 + h3 {
-    margin-top: 1.8rem;
-    margin-bottom: 0.9rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
   }
 
   h3 + h4 {
-    margin-top: 1.8rem;
-    margin-bottom: 0.9rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
   }
 
   ul, ol {
-    padding-left: 1.5rem;
+    padding-left: 2.592rem;
   }
 
   ul li, ol li {
-    margin-bottom: 0.9rem;
+    margin-bottom: 0.75rem;
   }
 
   blockquote {
-    margin-top: -0.9rem;
-    margin-bottom: 1.8rem;
+    margin-top: -0.75rem;
+    margin-bottom: 1.5rem;
   }
   blockquote p {
-    margin-bottom: 0.9rem;
-    padding-left: 1.8rem;
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    font-size: 0.875rem;
   }
   blockquote p + footer cite {
-    padding-left: 1.8rem;
+    padding-left: 1.5rem;
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
   }
 
   blockquote + h3, blockquote + h4, figure + h3, figure + h4 {
-    margin-top: 3.6rem;
+    margin-top: 3rem;
   }
 
   small {
     font-size: 0.72338rem;
-    line-height: 1.8rem;
+    line-height: 1.5rem;
   }
 
   figure {
     padding: 0;
-    margin: 3.6rem auto;
+    margin: 3rem auto;
     max-width: 36rem;
     text-align: center;
   }
   figure img {
     max-width: 100%;
+    margin-bottom: 1.5rem;
   }
   figure figcaption {
-    font-size: 0.83333rem;
+    font-size: 0.86806rem;
     color: #888;
+    margin-bottom: 1.5rem;
   }
 
-  figure.floatLeft {
-    padding: 1.8rem;
+  figure.floatLeft, figure.floatRight {
+    padding: 1.5rem;
     max-width: 15rem;
     margin: 0;
   }
-  figure.floatLeft figcaption {
+  figure.floatLeft figcaption, figure.floatRight figcaption {
     max-width: 100%;
-    font-size: 0.83333rem;
-  }
-
-  figure.floatRight {
-    padding: 1.8rem;
-    max-width: 15rem;
-    margin: 0;
-  }
-  figure.floatRight figcaption {
-    max-width: 100%;
-    font-size: 0.83333rem;
+    font-size: 0.86806rem;
   }
 }
 

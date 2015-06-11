@@ -1,7 +1,7 @@
 html {
 	color: $colorFontBody;
 	font-family: $fontBody;
-	font-size: ms(0); 						/* 16px */
+	font-size: ms(0);
     -moz-font-feature-settings:"salt" 1;
 	-moz-font-feature-settings:"salt=1";
 	-ms-font-feature-settings:"salt" 1;
@@ -10,12 +10,10 @@ html {
 	font-feature-settings:"salt" 1;
 }
 
-* {
-	line-height: $lhMobile; 					/* 23px */
-}
-
-// .verticalGrid {
-// 	background: url(../assets/images/vertical-grid-16px.gif);
+// * {
+// 	line-height: $lhMobile;
+// 	margin-top: 0;
+//     margin-bottom: $lhMobile;
 // }
 
 a {
@@ -49,6 +47,7 @@ blockquote,
 figure,
 pre,
 img {
+	line-height: $lhMobile;
 	margin-top: 0;
     margin-bottom: $lhMobile;
 }
@@ -59,7 +58,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: ms(10);
+  font-size: round(ms(10));
   line-height: 2*$lhMobile;
   margin-top: 3*$lhMobile;
   margin-bottom: $lhMobile;
@@ -81,6 +80,15 @@ h3 {
 h4 {
   margin-top: 1.5*$lhMobile;
   margin-bottom: 0.5*$lhMobile;
+}
+
+h5 {
+	font-weight: normal;
+	font-style: italic;
+}
+
+h6 {
+	font-weight: normal;
 }
 
 h2 + h3 {
@@ -131,8 +139,8 @@ figure + h3, figure + h4 {
 }
 
 img {
-	vertical-align: middle;
-	// max-height: 322px;
+	// vertical-align: middle;
+	display: block;
 }
 
 small {
@@ -142,14 +150,44 @@ small {
 	line-height: 1.4375rem;
 }
 
-@media screen and (min-width: 1025px){
-	html {
-		font-size: $ms-base(1.25rem);
+figure {
+	padding: 0;
+	margin: 2*$lhMobile auto;
+	max-width: 36rem;
+	text-align: center;
+
+	img {
+		max-width: 100%;
 	}
 
-	* {
-		line-height: $lhDesktop;
+	figcaption {
+		font-size: ms(-1);
+		color: $colorFontLight;
+		margin-bottom: $lhMobile;
 	}
+}
+
+figure.floatLeft, figure.floatRight {
+	padding: $lhMobile;
+	max-width: 15rem;
+	margin: 0;
+
+	figcaption {
+		max-width: 100%;
+		font-size: ms(-1);
+	}
+}
+
+@media screen and (min-width: 1025px){
+	html {
+		font-size: $sizeFontDesktop;
+	}
+
+	// * {
+	// 	line-height: $lhDesktop;
+	// 	margin-top: 0;
+	//     margin-bottom: $lhDesktop;
+	// }
 
 	h1,
 	h2,
@@ -165,35 +203,40 @@ small {
 	pre,
 	img {
 		max-width: 36rem;
-		margin-top: 0;
+		line-height: $lhDesktop;
 		margin-bottom: $lhDesktop;
+		margin-top: 0;
 		margin-left: auto;
 		margin-right: auto;
 	}
 
 	h1 {
-	  	font-size: ms(4);
+	  	font-size: ms(11);
 	  	line-height: 2*$lhDesktop;
 	  	margin-top: 3*$lhDesktop;
 	  	margin-bottom: $lhDesktop;
 	}
 
-	h2, h3, h4, h5, h6 {
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
 		line-height: $lhDesktop;
-		margin-top: 1.75*$lhDesktop;
-		margin-bottom: 0.25*$lhDesktop;
+		margin-top: 1.5*$lhDesktop;
+		margin-bottom: 0.5*$lhDesktop;
 	}
 
 	h2 {
-	  	font-size: ms(2);
+	  	font-size: ms(7);
 	}
 
 	h3 {
-	  	font-size: ms(1);
+	  	font-size: ms(5);
 	}
 
 	h4 {
-		font-size: $ms-base;
+		// font-size: $ms-base;
 	}
 
 	h5 {
@@ -218,7 +261,7 @@ small {
 	}
 
 	ul, ol {
-		padding-left: ms(5);
+		padding-left: ms(11);
 	}
 
 	ul li, ol li {
@@ -232,12 +275,13 @@ small {
 	  	p {
 			margin-bottom: 0.5*$lhDesktop;
 			padding-left: $lhDesktop;
-			// font-size: ms(0) - 0.25*ms(0);
+			font-size: ms(3) - 0.3*ms(3);
 	  	}
 
 	  	p + footer cite {
 	  		padding-left: $lhDesktop;
-	  		// font-size: ms(0) - 0.25*ms(0);
+	  		font-size: ms(3) - 0.3*ms(3);
+	  		margin-bottom: $lhDesktop;
 	  	}
 	}
 
@@ -258,35 +302,24 @@ small {
 
 		img {
 			max-width: 100%;
+			margin-bottom: $lhDesktop;
 		}
 
 		figcaption {
-			font-size: ms(-2);
+			font-size: ms(-1);
 			color: $colorFontLight;
+			margin-bottom: $lhDesktop;
 		}
 	}
 
-	figure.floatLeft {
-		// margin-right: 1em;
+	figure.floatLeft, figure.floatRight {
 		padding: $lhDesktop;
 		max-width: 15rem;
 		margin: 0;
 
 		figcaption {
 			max-width: 100%;
-			font-size: ms(-2);
-		}
-	}
-
-	figure.floatRight {
-		// margin-left: 1em;
-		padding: $lhDesktop;
-		max-width: 15rem;
-		margin: 0;
-
-		figcaption {
-			max-width: 100%;
-			font-size: ms(-2);
+			font-size: ms(-1);
 		}
 	}
 }
