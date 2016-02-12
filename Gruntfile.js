@@ -2,20 +2,18 @@ module.exports = function(grunt){
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		// CSS
-		sass: {
-			dist: {
-				options: {
-					style: 'expanded',
-					precision: 15
-				},
-				files: [{
-			        expand: true,
-			        cwd: 'src/style/',
-			        src: ['**/*.scss'],
-			        dest: 'src/style/',
-			        ext: '.css'
-				}]
-			}
+		stylus: {
+            options: {
+                style: 'expanded',
+                precision: 15
+            },
+            files: [{
+                expand: true,
+                cwd: 'src/style/',
+                src: ['**/*.styl'],
+                dest: 'src/style/',
+                ext: '.css'
+            }]
 		},
 		concat: {
 			css: {
@@ -95,9 +93,9 @@ module.exports = function(grunt){
 					livereload: true,
 				}
 			},
-			scss: {
-				files: ['src/style/*.scss'],
-				tasks: ['sass', 'concat:css', 'cssmin', 'compress:css'],
+			stylus: {
+				files: ['src/style/*.styl'],
+				tasks: ['stylus', 'concat:css', 'cssmin', 'compress:css'],
 				options: {
 					livereload: true,
 				}
@@ -124,7 +122,7 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-compress');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
-	grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-stylus');
 	grunt.loadNpmTasks('grunt-browser-sync');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
